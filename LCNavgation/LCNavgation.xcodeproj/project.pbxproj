@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		812638DF2248A9F60028F332 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 812638DE2248A9F60028F332 /* timg.jpeg */; };
+		812638E92248B8710028F332 /* UIViewController+LCNavgation.m in Sources */ = {isa = PBXBuildFile; fileRef = 812638E82248B8710028F332 /* UIViewController+LCNavgation.m */; };
+		812638EC2248BC1A0028F332 /* LCViewControllerInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 812638EB2248BC1A0028F332 /* LCViewControllerInterceptor.m */; };
+		813B68EE2241DE2D006F7C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B68ED2241DE2D006F7C5C /* AppDelegate.m */; };
+		813B68F12241DE2D006F7C5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B68F02241DE2D006F7C5C /* ViewController.m */; };
+		813B68F42241DE2D006F7C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B68F22241DE2D006F7C5C /* Main.storyboard */; };
+		813B68F62241DE2E006F7C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813B68F52241DE2E006F7C5C /* Assets.xcassets */; };
+		813B68F92241DE2E006F7C5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B68F72241DE2E006F7C5C /* LaunchScreen.storyboard */; };
+		813B68FC2241DE2E006F7C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B68FB2241DE2E006F7C5C /* main.m */; };
+		813B69052241DE65006F7C5C /* LCNavgationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B69042241DE65006F7C5C /* LCNavgationView.m */; };
+		81422DA92243659A009F7EB0 /* LCNavTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 81422DA82243659A009F7EB0 /* LCNavTools.m */; };
+		81AA7153224A206200F645DB /* CEEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AA7152224A206200F645DB /* CEEViewController.m */; };
+		E76CB16BB9947F440EF80F6B /* libPods-LCNavgation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2C5FBC53CAE8397B239CA3 /* libPods-LCNavgation.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0798997F9B154969A5C63EFA /* Pods-LCNavgation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNavgation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCNavgation/Pods-LCNavgation.debug.xcconfig"; sourceTree = "<group>"; };
+		2A2C5FBC53CAE8397B239CA3 /* libPods-LCNavgation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCNavgation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E38AEA56E80DE7780809ED /* Pods-LCNavgation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNavgation.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNavgation/Pods-LCNavgation.release.xcconfig"; sourceTree = "<group>"; };
+		812638DE2248A9F60028F332 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
+		812638E72248B8710028F332 /* UIViewController+LCNavgation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LCNavgation.h"; sourceTree = "<group>"; };
+		812638E82248B8710028F332 /* UIViewController+LCNavgation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LCNavgation.m"; sourceTree = "<group>"; };
+		812638EA2248BC1A0028F332 /* LCViewControllerInterceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCViewControllerInterceptor.h; sourceTree = "<group>"; };
+		812638EB2248BC1A0028F332 /* LCViewControllerInterceptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCViewControllerInterceptor.m; sourceTree = "<group>"; };
+		812638ED2248D22B0028F332 /* LCNavgationViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavgationViewDelegate.h; sourceTree = "<group>"; };
+		813B68E92241DE2D006F7C5C /* LCNavgation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCNavgation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		813B68EC2241DE2D006F7C5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		813B68ED2241DE2D006F7C5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		813B68EF2241DE2D006F7C5C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		813B68F02241DE2D006F7C5C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		813B68F32241DE2D006F7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		813B68F52241DE2E006F7C5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		813B68F82241DE2E006F7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		813B68FA2241DE2E006F7C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		813B68FB2241DE2E006F7C5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		813B69032241DE65006F7C5C /* LCNavgationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavgationView.h; sourceTree = "<group>"; };
+		813B69042241DE65006F7C5C /* LCNavgationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavgationView.m; sourceTree = "<group>"; };
+		81422DA72243659A009F7EB0 /* LCNavTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavTools.h; sourceTree = "<group>"; };
+		81422DA82243659A009F7EB0 /* LCNavTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavTools.m; sourceTree = "<group>"; };
+		81AA7151224A206200F645DB /* CEEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CEEViewController.h; sourceTree = "<group>"; };
+		81AA7152224A206200F645DB /* CEEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CEEViewController.m; sourceTree = "<group>"; };
+		81DB70DE224B221800DEE2B0 /* LCNavgationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavgationHeader.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		813B68E62241DE2D006F7C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76CB16BB9947F440EF80F6B /* libPods-LCNavgation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		813B68E02241DE2D006F7C5C = {
+			isa = PBXGroup;
+			children = (
+				812638DE2248A9F60028F332 /* timg.jpeg */,
+				813B68EB2241DE2D006F7C5C /* LCNavgation */,
+				813B68EA2241DE2D006F7C5C /* Products */,
+				B3281FAF5A8E1203F9524419 /* Pods */,
+				E178B3CB485A51691902D2E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		813B68EA2241DE2D006F7C5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				813B68E92241DE2D006F7C5C /* LCNavgation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		813B68EB2241DE2D006F7C5C /* LCNavgation */ = {
+			isa = PBXGroup;
+			children = (
+				813B69022241DE3A006F7C5C /* LCNavgation */,
+				813B68EC2241DE2D006F7C5C /* AppDelegate.h */,
+				813B68ED2241DE2D006F7C5C /* AppDelegate.m */,
+				813B68EF2241DE2D006F7C5C /* ViewController.h */,
+				813B68F02241DE2D006F7C5C /* ViewController.m */,
+				813B68F22241DE2D006F7C5C /* Main.storyboard */,
+				813B68F52241DE2E006F7C5C /* Assets.xcassets */,
+				813B68F72241DE2E006F7C5C /* LaunchScreen.storyboard */,
+				813B68FA2241DE2E006F7C5C /* Info.plist */,
+				813B68FB2241DE2E006F7C5C /* main.m */,
+				812638EA2248BC1A0028F332 /* LCViewControllerInterceptor.h */,
+				812638EB2248BC1A0028F332 /* LCViewControllerInterceptor.m */,
+				81AA7151224A206200F645DB /* CEEViewController.h */,
+				81AA7152224A206200F645DB /* CEEViewController.m */,
+			);
+			path = LCNavgation;
+			sourceTree = "<group>";
+		};
+		813B69022241DE3A006F7C5C /* LCNavgation */ = {
+			isa = PBXGroup;
+			children = (
+				81DB70DE224B221800DEE2B0 /* LCNavgationHeader.h */,
+				812638ED2248D22B0028F332 /* LCNavgationViewDelegate.h */,
+				813B69032241DE65006F7C5C /* LCNavgationView.h */,
+				813B69042241DE65006F7C5C /* LCNavgationView.m */,
+				81422DA72243659A009F7EB0 /* LCNavTools.h */,
+				81422DA82243659A009F7EB0 /* LCNavTools.m */,
+				812638E72248B8710028F332 /* UIViewController+LCNavgation.h */,
+				812638E82248B8710028F332 /* UIViewController+LCNavgation.m */,
+			);
+			path = LCNavgation;
+			sourceTree = "<group>";
+		};
+		B3281FAF5A8E1203F9524419 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0798997F9B154969A5C63EFA /* Pods-LCNavgation.debug.xcconfig */,
+				46E38AEA56E80DE7780809ED /* Pods-LCNavgation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E178B3CB485A51691902D2E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A2C5FBC53CAE8397B239CA3 /* libPods-LCNavgation.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		813B68E82241DE2D006F7C5C /* LCNavgation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 813B68FF2241DE2E006F7C5C /* Build configuration list for PBXNativeTarget "LCNavgation" */;
+			buildPhases = (
+				E130F07F14858EFA7F400F18 /* [CP] Check Pods Manifest.lock */,
+				813B68E52241DE2D006F7C5C /* Sources */,
+				813B68E62241DE2D006F7C5C /* Frameworks */,
+				813B68E72241DE2D006F7C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LCNavgation;
+			productName = LCNavgation;
+			productReference = 813B68E92241DE2D006F7C5C /* LCNavgation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		813B68E12241DE2D006F7C5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Luca;
+				TargetAttributes = {
+					813B68E82241DE2D006F7C5C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 813B68E42241DE2D006F7C5C /* Build configuration list for PBXProject "LCNavgation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 813B68E02241DE2D006F7C5C;
+			productRefGroup = 813B68EA2241DE2D006F7C5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				813B68E82241DE2D006F7C5C /* LCNavgation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		813B68E72241DE2D006F7C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				813B68F92241DE2E006F7C5C /* LaunchScreen.storyboard in Resources */,
+				813B68F62241DE2E006F7C5C /* Assets.xcassets in Resources */,
+				812638DF2248A9F60028F332 /* timg.jpeg in Resources */,
+				813B68F42241DE2D006F7C5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E130F07F14858EFA7F400F18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LCNavgation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		813B68E52241DE2D006F7C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				813B68F12241DE2D006F7C5C /* ViewController.m in Sources */,
+				813B69052241DE65006F7C5C /* LCNavgationView.m in Sources */,
+				813B68FC2241DE2E006F7C5C /* main.m in Sources */,
+				812638EC2248BC1A0028F332 /* LCViewControllerInterceptor.m in Sources */,
+				81AA7153224A206200F645DB /* CEEViewController.m in Sources */,
+				81422DA92243659A009F7EB0 /* LCNavTools.m in Sources */,
+				813B68EE2241DE2D006F7C5C /* AppDelegate.m in Sources */,
+				812638E92248B8710028F332 /* UIViewController+LCNavgation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		813B68F22241DE2D006F7C5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				813B68F32241DE2D006F7C5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		813B68F72241DE2E006F7C5C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				813B68F82241DE2E006F7C5C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		813B68FD2241DE2E006F7C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		813B68FE2241DE2E006F7C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		813B69002241DE2E006F7C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0798997F9B154969A5C63EFA /* Pods-LCNavgation.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LCNavgation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Luca.LCNavgation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		813B69012241DE2E006F7C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46E38AEA56E80DE7780809ED /* Pods-LCNavgation.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LCNavgation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Luca.LCNavgation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		813B68E42241DE2D006F7C5C /* Build configuration list for PBXProject "LCNavgation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				813B68FD2241DE2E006F7C5C /* Debug */,
+				813B68FE2241DE2E006F7C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		813B68FF2241DE2E006F7C5C /* Build configuration list for PBXNativeTarget "LCNavgation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				813B69002241DE2E006F7C5C /* Debug */,
+				813B69012241DE2E006F7C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 813B68E12241DE2D006F7C5C /* Project object */;
+}
