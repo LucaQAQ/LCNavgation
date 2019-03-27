@@ -9,7 +9,6 @@
 #import "UIViewController+LCNavgation.h"
 #import "LCNavgationView.h"
 #import <objc/runtime.h>
-#import <RSSwizzle.h>
 
 static NSString *navgationViewKey = @"navgationViewKey";
 
