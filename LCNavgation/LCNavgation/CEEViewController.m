@@ -21,30 +21,8 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self setTitle:@"MM"];
-    [self setNavBgColors:@[[UIColor whiteColor]]];
-    
-    //原生方法无效
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    
-//    self.edgePanGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(openMenuClick)];
-    self.edgePanGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] init];
-     SEL action = NSSelectorFromString(@"handleNavigationTransition:");
-    [self.edgePanGestureRecognizer addTarget:self.navigationController.self.interactivePopGestureRecognizer.delegate action:action];
-    self.edgePanGestureRecognizer.delegate = self;
-    self.edgePanGestureRecognizer.edges = UIRectEdgeLeft;
-    [self.view addGestureRecognizer:self.edgePanGestureRecognizer];
+    self.navTitle = @"CEE";
+    [self setNavBgColors:@[[UIColor redColor],[UIColor greenColor]]];
 }
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-//-(void)openMenuClick{
-//    //进行相应操作
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
 
 @end

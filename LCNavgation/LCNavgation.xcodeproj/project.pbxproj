@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		812638DF2248A9F60028F332 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 812638DE2248A9F60028F332 /* timg.jpeg */; };
-		812638E92248B8710028F332 /* UIViewController+LCNavgation.m in Sources */ = {isa = PBXBuildFile; fileRef = 812638E82248B8710028F332 /* UIViewController+LCNavgation.m */; };
 		812638EC2248BC1A0028F332 /* LCViewControllerInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 812638EB2248BC1A0028F332 /* LCViewControllerInterceptor.m */; };
 		813B68EE2241DE2D006F7C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B68ED2241DE2D006F7C5C /* AppDelegate.m */; };
 		813B68F12241DE2D006F7C5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B68F02241DE2D006F7C5C /* ViewController.m */; };
@@ -16,8 +15,10 @@
 		813B68F62241DE2E006F7C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813B68F52241DE2E006F7C5C /* Assets.xcassets */; };
 		813B68F92241DE2E006F7C5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B68F72241DE2E006F7C5C /* LaunchScreen.storyboard */; };
 		813B68FC2241DE2E006F7C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B68FB2241DE2E006F7C5C /* main.m */; };
-		813B69052241DE65006F7C5C /* LCNavgationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 813B69042241DE65006F7C5C /* LCNavgationView.m */; };
-		81422DA92243659A009F7EB0 /* LCNavTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 81422DA82243659A009F7EB0 /* LCNavTools.m */; };
+		8196B8952255EF9400769F77 /* LCNavgationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8196B88B2255EF9400769F77 /* LCNavgationView.m */; };
+		8196B8962255EF9400769F77 /* UINavigationBar+LCNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8196B88D2255EF9400769F77 /* UINavigationBar+LCNavigationBar.m */; };
+		8196B8972255EF9400769F77 /* UIViewController+LCNavgation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8196B88E2255EF9400769F77 /* UIViewController+LCNavgation.m */; };
+		8196B8982255EF9400769F77 /* LCNavTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8196B8942255EF9400769F77 /* LCNavTools.m */; };
 		81AA7153224A206200F645DB /* CEEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AA7152224A206200F645DB /* CEEViewController.m */; };
 		E76CB16BB9947F440EF80F6B /* libPods-LCNavgation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2C5FBC53CAE8397B239CA3 /* libPods-LCNavgation.a */; };
 /* End PBXBuildFile section */
@@ -27,11 +28,8 @@
 		2A2C5FBC53CAE8397B239CA3 /* libPods-LCNavgation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCNavgation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E38AEA56E80DE7780809ED /* Pods-LCNavgation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNavgation.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNavgation/Pods-LCNavgation.release.xcconfig"; sourceTree = "<group>"; };
 		812638DE2248A9F60028F332 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
-		812638E72248B8710028F332 /* UIViewController+LCNavgation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LCNavgation.h"; sourceTree = "<group>"; };
-		812638E82248B8710028F332 /* UIViewController+LCNavgation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LCNavgation.m"; sourceTree = "<group>"; };
 		812638EA2248BC1A0028F332 /* LCViewControllerInterceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCViewControllerInterceptor.h; sourceTree = "<group>"; };
 		812638EB2248BC1A0028F332 /* LCViewControllerInterceptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCViewControllerInterceptor.m; sourceTree = "<group>"; };
-		812638ED2248D22B0028F332 /* LCNavgationViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavgationViewDelegate.h; sourceTree = "<group>"; };
 		813B68E92241DE2D006F7C5C /* LCNavgation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCNavgation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813B68EC2241DE2D006F7C5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		813B68ED2241DE2D006F7C5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,13 +40,18 @@
 		813B68F82241DE2E006F7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		813B68FA2241DE2E006F7C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		813B68FB2241DE2E006F7C5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		813B69032241DE65006F7C5C /* LCNavgationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavgationView.h; sourceTree = "<group>"; };
-		813B69042241DE65006F7C5C /* LCNavgationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavgationView.m; sourceTree = "<group>"; };
-		81422DA72243659A009F7EB0 /* LCNavTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavTools.h; sourceTree = "<group>"; };
-		81422DA82243659A009F7EB0 /* LCNavTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavTools.m; sourceTree = "<group>"; };
+		8196B88B2255EF9400769F77 /* LCNavgationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavgationView.m; sourceTree = "<group>"; };
+		8196B88C2255EF9400769F77 /* LCNavgationViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavgationViewDelegate.h; sourceTree = "<group>"; };
+		8196B88D2255EF9400769F77 /* UINavigationBar+LCNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+LCNavigationBar.m"; sourceTree = "<group>"; };
+		8196B88E2255EF9400769F77 /* UIViewController+LCNavgation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LCNavgation.m"; sourceTree = "<group>"; };
+		8196B88F2255EF9400769F77 /* LCNavTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavTools.h; sourceTree = "<group>"; };
+		8196B8902255EF9400769F77 /* LCNavgationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavgationView.h; sourceTree = "<group>"; };
+		8196B8912255EF9400769F77 /* UINavigationBar+LCNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+LCNavigationBar.h"; sourceTree = "<group>"; };
+		8196B8922255EF9400769F77 /* LCNavgationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavgationHeader.h; sourceTree = "<group>"; };
+		8196B8932255EF9400769F77 /* UIViewController+LCNavgation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LCNavgation.h"; sourceTree = "<group>"; };
+		8196B8942255EF9400769F77 /* LCNavTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavTools.m; sourceTree = "<group>"; };
 		81AA7151224A206200F645DB /* CEEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CEEViewController.h; sourceTree = "<group>"; };
 		81AA7152224A206200F645DB /* CEEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CEEViewController.m; sourceTree = "<group>"; };
-		81DB70DE224B221800DEE2B0 /* LCNavgationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavgationHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +88,7 @@
 		813B68EB2241DE2D006F7C5C /* LCNavgation */ = {
 			isa = PBXGroup;
 			children = (
-				813B69022241DE3A006F7C5C /* LCNavgation */,
+				8196B88A2255EF9400769F77 /* LCNavgation */,
 				813B68EC2241DE2D006F7C5C /* AppDelegate.h */,
 				813B68ED2241DE2D006F7C5C /* AppDelegate.m */,
 				813B68EF2241DE2D006F7C5C /* ViewController.h */,
@@ -103,17 +106,19 @@
 			path = LCNavgation;
 			sourceTree = "<group>";
 		};
-		813B69022241DE3A006F7C5C /* LCNavgation */ = {
+		8196B88A2255EF9400769F77 /* LCNavgation */ = {
 			isa = PBXGroup;
 			children = (
-				81DB70DE224B221800DEE2B0 /* LCNavgationHeader.h */,
-				812638ED2248D22B0028F332 /* LCNavgationViewDelegate.h */,
-				813B69032241DE65006F7C5C /* LCNavgationView.h */,
-				813B69042241DE65006F7C5C /* LCNavgationView.m */,
-				81422DA72243659A009F7EB0 /* LCNavTools.h */,
-				81422DA82243659A009F7EB0 /* LCNavTools.m */,
-				812638E72248B8710028F332 /* UIViewController+LCNavgation.h */,
-				812638E82248B8710028F332 /* UIViewController+LCNavgation.m */,
+				8196B8922255EF9400769F77 /* LCNavgationHeader.h */,
+				8196B8902255EF9400769F77 /* LCNavgationView.h */,
+				8196B88B2255EF9400769F77 /* LCNavgationView.m */,
+				8196B88C2255EF9400769F77 /* LCNavgationViewDelegate.h */,
+				8196B88F2255EF9400769F77 /* LCNavTools.h */,
+				8196B8942255EF9400769F77 /* LCNavTools.m */,
+				8196B8912255EF9400769F77 /* UINavigationBar+LCNavigationBar.h */,
+				8196B88D2255EF9400769F77 /* UINavigationBar+LCNavigationBar.m */,
+				8196B8932255EF9400769F77 /* UIViewController+LCNavgation.h */,
+				8196B88E2255EF9400769F77 /* UIViewController+LCNavgation.m */,
 			);
 			path = LCNavgation;
 			sourceTree = "<group>";
@@ -233,13 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				813B68F12241DE2D006F7C5C /* ViewController.m in Sources */,
-				813B69052241DE65006F7C5C /* LCNavgationView.m in Sources */,
+				8196B8982255EF9400769F77 /* LCNavTools.m in Sources */,
 				813B68FC2241DE2E006F7C5C /* main.m in Sources */,
+				8196B8962255EF9400769F77 /* UINavigationBar+LCNavigationBar.m in Sources */,
 				812638EC2248BC1A0028F332 /* LCViewControllerInterceptor.m in Sources */,
 				81AA7153224A206200F645DB /* CEEViewController.m in Sources */,
-				81422DA92243659A009F7EB0 /* LCNavTools.m in Sources */,
 				813B68EE2241DE2D006F7C5C /* AppDelegate.m in Sources */,
-				812638E92248B8710028F332 /* UIViewController+LCNavgation.m in Sources */,
+				8196B8952255EF9400769F77 /* LCNavgationView.m in Sources */,
+				8196B8972255EF9400769F77 /* UIViewController+LCNavgation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

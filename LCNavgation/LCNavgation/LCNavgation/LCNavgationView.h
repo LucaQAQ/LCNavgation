@@ -34,24 +34,26 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *navTitleColor;
 @property (nonatomic, assign) CGFloat navTitleLabmaxWidth;
 
-//返回按钮
-@property (nonatomic, assign) CGFloat navBackLeft;
+//返回按钮左间距
+@property (nonatomic, assign) CGFloat navLeftItemLeft;
 //右按钮
-@property (nonatomic, assign) CGFloat rightBtnRight;
-@property (nonatomic, strong) UIFont *rightBtnFont;
-@property (nonatomic, strong) UIColor *rightBtnBgColor;
+@property (nonatomic, strong) UIButton *rightItem;
+@property (nonatomic, assign) CGFloat rightItemRight;
+@property (nonatomic, strong) UIFont *rightItemFont;
+@property (nonatomic, strong) UIColor *rightItemBgColor;
 
 //初始化(放基类、或者swizzing viewDidLoad)
--(instancetype)initWithController:(UIViewController *)controller;
-                             ;
-//重置状态(viewWillAppear:)
-- (void)setNavWhenViewWillAppear;
+-(instancetype)initWithController:(UIViewController<LCNavgationViewDelegate> *)controller;
 
 //隐藏左按钮
-- (void)hideLeftBtn;
+- (void)hideLeftItem;
 //隐藏、显示
 - (void)hideNav;
 - (void)showNav;
+
+//隐藏右按钮
+- (void)hideRightItem;
+- (void)showRightItem;
 
 //设置左按钮图片
 - (void)setNavLeftItemImg:(UIImage *)image state:(UIControlState)state;
@@ -59,6 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNavRightItemImg:(UIImage *)image state:(UIControlState)state;
 - (void)setNavRightItemText:(NSString *)text state:(UIControlState)state;
 - (void)setNavRightItemTtitleColor:(UIColor *)color state:(UIControlState)state;
+
+//添加视图
+- (void)addAdditionalView:(UIView *)additionalView;
 
 @end
 

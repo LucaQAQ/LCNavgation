@@ -8,18 +8,6 @@
 
 #import "LCNavgationView.h"
 
-// 判断是否是iPhone X系列
-#define LC_IS_iPhoneX      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ?\
-(\
-CGSizeEqualToSize(CGSizeMake(375, 812),[UIScreen mainScreen].bounds.size)\
-||\
-CGSizeEqualToSize(CGSizeMake(812, 375),[UIScreen mainScreen].bounds.size)\
-||\
-CGSizeEqualToSize(CGSizeMake(414, 896),[UIScreen mainScreen].bounds.size)\
-||\
-CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
-:\
-NO)
 // 导航栏高度
 #define LC_NAVBAR_HEIGHT 44.0f
 //状态栏高度
@@ -38,9 +26,7 @@ NO)
 //标题lab
 @property (nonatomic, strong) UILabel *titleLab;
 //返回按钮
-@property (nonatomic, strong) UIButton *backBtn;
-//右上角按钮
-@property (nonatomic, strong) UIButton *rightBtn;
+@property (nonatomic, strong) UIButton *leftItem;
 
 //当前返回按钮image
 @property (nonatomic, strong) UIImage *navBackImg;
@@ -50,39 +36,50 @@ NO)
 
 @implementation LCNavgationView
 
--(void)dealloc{
-    
-    NSLog(@"sdddd");
-}
 //初始化
--(instancetype)initWithController:(UIViewController *)controller{
+-(instancetype)initWithController:(UIViewController<LCNavgationViewDelegate> *)controller{
     
     if (self = [super init]) {
         
         self.controller = controller;
-        self.rightBtnFont = [UIFont systemFontOfSize:15];
-        self.rightBtnRight = 7.0;
+        self.rightItemFont = [UIFont systemFontOfSize:15];
+        self.rightItemRight = 10.0;
+        self.navLeftItemLeft = 10.0;
+        self.delegate = controller;
         self.direction = LCGradientColorsDirectionLeft;
         self.frame = CGRectMake(0, 0, LC_SCREENWIDTH, LC_STATUSBAR_HEIGHT+LC_NAVBAR_HEIGHT);
         [self.controller.view addSubview:self];
         [self addSubview:self.navBgImageView];
         [self.navBgImageView addSubview:self.titleLab];
-        [self.navBgImageView addSubview:self.backBtn];
+        [self.navBgImageView addSubview:self.leftItem];
+        
+        //原生方法无效
+        controller.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        
+        UIScreenEdgePanGestureRecognizer *edgePanGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] init];
+        SEL action = NSSelectorFromString(@"handleNavigationTransition:");
+        [edgePanGestureRecognizer addTarget:controller.navigationController.self.interactivePopGestureRecognizer.delegate action:action];
+        edgePanGestureRecognizer.edges = UIRectEdgeLeft;
+        [controller.view addGestureRecognizer:edgePanGestureRecognizer];
     }
     return self;
 }
-//重置状态(viewWillAppear:)
-- (void)setNavWhenViewWillAppear{
-    
-    // 隐藏系统导航栏
-    [_controller.navigationController setNavigationBarHidden:YES];
-    //放最顶层
-    [_controller.view bringSubviewToFront:self];
-}
 //隐藏左按钮
-- (void)hideLeftBtn{
+- (void)hideLeftItem{
     
-    self.backBtn.hidden = YES;
+    self.leftItem.hidden = YES;
+}
+//隐藏右按钮
+- (void)hideRightItem{
+    if (_rightItem) {
+        self.rightItem.hidden = YES;
+    }
+}
+- (void)showRightItem{
+    
+    if (_rightItem) {
+        self.rightItem.hidden = NO;
+    }
 }
 //隐藏、显示
 - (void)hideNav{
@@ -96,37 +93,37 @@ NO)
 #pragma mark - Action
 - (void)nav_leftBackAction{
     
-    if (_delegate && [_delegate respondsToSelector:@selector(nav_backActionWithController:)]) {
-        [_delegate nav_backActionWithController:self.controller];
+    if (_delegate && [_delegate respondsToSelector:@selector(nav_leftActionWithLeftItem:)]) {
+        [_delegate nav_leftActionWithLeftItem:self.leftItem];
     }
 }
 - (void)nav_rightAction{
-    if (_delegate && [_delegate respondsToSelector:@selector(nav_rightActionWithController:)]) {
-        [_delegate nav_rightActionWithController:self.controller];
+    if (_delegate && [_delegate respondsToSelector:@selector(nav_rightActionWithRightItem:)]) {
+        [_delegate nav_rightActionWithRightItem:self.rightItem];
     }
 }
 #pragma mark - set/get
--(UIButton *)rightBtn{
+-(UIButton *)rightItem{
     
-    if (!_rightBtn) {
+    if (!_rightItem) {
         
-        _rightBtn = [[UIButton alloc]init];
-        [_rightBtn addTarget:self action:@selector(nav_rightAction) forControlEvents:UIControlEventTouchUpInside];
-        [self.navBgImageView addSubview:_rightBtn];
+        _rightItem = [[UIButton alloc]init];
+        [_rightItem addTarget:self action:@selector(nav_rightAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.navBgImageView addSubview:_rightItem];
     }
-    return _rightBtn;
+    return _rightItem;
 }
--(UIButton *)backBtn{
+-(UIButton *)leftItem{
     
-    if (!_backBtn) {
+    if (!_leftItem) {
         
         UIImage *backImg = [UIImage imageNamed:@"nar_backImg"];
         self.navBackImg = backImg;
-        _backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, LC_STATUSBAR_HEIGHT, backImg.size.width+14, LC_NAVBAR_HEIGHT)];
-        [_backBtn setImage:backImg forState:UIControlStateNormal];
-        [_backBtn addTarget:self action:@selector(nav_leftBackAction) forControlEvents:UIControlEventTouchUpInside];
+        _leftItem = [[UIButton alloc]initWithFrame:CGRectMake(0, LC_STATUSBAR_HEIGHT, backImg.size.width+14, LC_NAVBAR_HEIGHT)];
+        [_leftItem setImage:backImg forState:UIControlStateNormal];
+        [_leftItem addTarget:self action:@selector(nav_leftBackAction) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _backBtn;
+    return _leftItem;
 }
 -(void)setTitle:(NSString *)title{
     
@@ -236,57 +233,65 @@ NO)
         self.titleLab.frame = CGRectMake((LC_SCREENWIDTH-navTitleLabmaxWidth)/2, LC_STATUSBAR_HEIGHT, navTitleLabmaxWidth, LC_NAVBAR_HEIGHT);
     }
 }
--(void)setNavBackLeft:(CGFloat)navBackLeft{
-    
-    _navBackLeft = navBackLeft;
-    _backBtn.frame = CGRectMake(0, LC_STATUSBAR_HEIGHT, self.navBackImg.size.width+navBackLeft*2, LC_NAVBAR_HEIGHT);
+-(void)setNavLeftItemLeft:(CGFloat)navLeftItemLeft{
+    _navLeftItemLeft = navLeftItemLeft;
+    _leftItem.frame = CGRectMake(0, LC_STATUSBAR_HEIGHT, self.navBackImg.size.width+navLeftItemLeft*2, LC_NAVBAR_HEIGHT);
 }
 //设置左按钮图片
 - (void)setNavLeftItemImg:(UIImage *)image state:(UIControlState)state{
     
     self.navBackImg = image;
-    _backBtn.frame = CGRectMake(0, LC_STATUSBAR_HEIGHT, self.navBackImg.size.width+self.navBackLeft*2, LC_NAVBAR_HEIGHT);
-    [_backBtn setImage:image forState:state];
+    _leftItem.frame = CGRectMake(0, LC_STATUSBAR_HEIGHT, self.navBackImg.size.width+self.navLeftItemLeft*2, LC_NAVBAR_HEIGHT);
+    [_leftItem setImage:image forState:state];
 }
--(void)setRightBtnRight:(CGFloat)rightBtnRight{
+-(void)setRightItemRight:(CGFloat)rightItemRight{
     
-    _rightBtnRight = rightBtnRight;
-    self.rightBtn.frame = CGRectMake(LC_SCREENWIDTH-(rightBtnRight*2+self.rightContentWidth), LC_STATUSBAR_HEIGHT, rightBtnRight*2+self.rightContentWidth, LC_NAVBAR_HEIGHT);
+    _rightItemRight = rightItemRight;
+    self.rightItem.frame = CGRectMake(LC_SCREENWIDTH-(rightItemRight*2+self.rightContentWidth), LC_STATUSBAR_HEIGHT, rightItemRight*2+self.rightContentWidth, LC_NAVBAR_HEIGHT);
 }
--(void)setRightBtnFont:(UIFont *)rightBtnFont{
+-(void)setRightItemFont:(UIFont *)rightItemFont{
     
-    if (rightBtnFont) {
-        _rightBtnFont = rightBtnFont;
-        self.rightBtn.titleLabel.font = _rightBtnFont;
+    if (rightItemFont) {
+        _rightItemFont = rightItemFont;
+        self.rightItem.titleLabel.font = _rightItemFont;
     }
 }
 - (void)setNavRightItemImg:(UIImage *)image state:(UIControlState)state{
     
     self.rightContentWidth = image.size.width;
-    [self.rightBtn setTitle:@"" forState:UIControlStateNormal|UIControlStateDisabled|UIControlStateSelected];
-    [self.rightBtn setImage:image forState:state];
-    self.rightBtn.frame = CGRectMake(LC_SCREENWIDTH-(_rightBtnRight*2+self.rightContentWidth), LC_STATUSBAR_HEIGHT, _rightBtnRight*2+self.rightContentWidth, LC_NAVBAR_HEIGHT);
+    [self.rightItem setTitle:@"" forState:UIControlStateDisabled];
+    [self.rightItem setTitle:@"" forState:UIControlStateNormal];
+    [self.rightItem setTitle:@"" forState:UIControlStateSelected];
+    [self.rightItem setImage:image forState:state];
+    self.rightItem.frame = CGRectMake(LC_SCREENWIDTH-(_rightItemRight*2+self.rightContentWidth), LC_STATUSBAR_HEIGHT, _rightItemRight*2+self.rightContentWidth, LC_NAVBAR_HEIGHT);
 }
 - (void)setNavRightItemText:(NSString *)text state:(UIControlState)state{
     
-    [self.rightBtn setTitle:text forState:state];
-    CGSize size = [LCNavTools sizeWithText:text maxContentSize:CGSizeMake(100, LC_NAVBAR_HEIGHT) font:_rightBtnFont context:nil];
+    [self.rightItem setTitle:text forState:state];
+    CGSize size = [LCNavTools sizeWithText:text maxContentSize:CGSizeMake(100, LC_NAVBAR_HEIGHT) font:_rightItemFont context:nil];
     self.rightContentWidth = size.width;
-    [self.rightBtn setImage:nil forState:UIControlStateNormal|UIControlStateDisabled|UIControlStateSelected];
-    self.rightBtn.frame = CGRectMake(LC_SCREENWIDTH-(_rightBtnRight*2+self.rightContentWidth), LC_STATUSBAR_HEIGHT, _rightBtnRight*2+self.rightContentWidth, LC_NAVBAR_HEIGHT);
+    [self.rightItem setImage:[UIImage new] forState:UIControlStateNormal];
+    [self.rightItem setImage:[UIImage new] forState:UIControlStateDisabled];
+    [self.rightItem setImage:[UIImage new] forState:UIControlStateSelected];
+    self.rightItem.frame = CGRectMake(LC_SCREENWIDTH-(_rightItemRight*2+self.rightContentWidth), LC_STATUSBAR_HEIGHT, _rightItemRight*2+self.rightContentWidth, LC_NAVBAR_HEIGHT);
 }
 - (void)setNavRightItemTtitleColor:(UIColor *)color state:(UIControlState)state{
     
     if (color) {
-        [self.rightBtn setTitleColor:color forState:state];
+        [self.rightItem setTitleColor:color forState:state];
     }
 }
--(void)setRightBtnBgColor:(UIColor *)rightBtnBgColor{
+-(void)setRightItemBgColor:(UIColor *)rightItemBgColor{
     
-    if (rightBtnBgColor) {
-        _rightBtnBgColor = rightBtnBgColor;
-        self.rightBtn.backgroundColor = rightBtnBgColor;
+    if (rightItemBgColor) {
+        _rightItemBgColor = rightItemBgColor;
+        self.rightItem.backgroundColor = rightItemBgColor;
     }
 }
-
+//添加视图
+- (void)addAdditionalView:(UIView *)additionalView{
+    
+    [self.navBgImageView addSubview:additionalView];
+    [self.navBgImageView sendSubviewToBack:additionalView];
+}
 @end

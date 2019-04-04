@@ -21,7 +21,7 @@
     [super viewDidLoad];
 
     [self setNavTitle:@"首页"];
-    [self hideNavBackBtn];
+    [self hideNavLeftItem];
     [self setNavRightItemText:@"确定" state:UIControlStateNormal];
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 300, 100, 40)];

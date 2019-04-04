@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LCNavgationViewDelegate <NSObject>
 @optional;
 //nav返回
-- (void)nav_backActionWithController:(UIViewController *)controller;
+- (void)nav_leftActionWithLeftItem:(UIButton *)leftItem;
 //右按钮点击
-- (void)nav_rightActionWithController:(UIViewController *)controller;
+- (void)nav_rightActionWithRightItem:(UIButton *)rightItem;
 
 @end
 

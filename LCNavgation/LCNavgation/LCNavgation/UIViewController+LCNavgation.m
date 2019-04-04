@@ -11,39 +11,52 @@
 #import <objc/runtime.h>
 
 static NSString *navgationViewKey = @"navgationViewKey";
+static NSString *navTitleKey = @"navTitleKey";
 
 @implementation UIViewController (LCNavgation)
 
--(void)setNavgationView:(LCNavgationView *)navgationView{
+#pragma mark - 初始化
+- (void)initNavgationInViewDidLoad{
     
-    objc_setAssociatedObject(self, &navgationViewKey, navgationView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    //创建自定义导航栏
+    self.navgationView = [[LCNavgationView alloc]initWithController:self];
+    if (self.navTitle) {
+        self.navgationView.title = self.navTitle;
+    }
 }
--(LCNavgationView *)navgationView{
- 
-    return objc_getAssociatedObject(self, &navgationViewKey);
-}
-- (void)hideNavBackBtn{
+- (void)setNavgationInViewWillAppear{
+    //设置系统导航栏透明、隐藏返回按钮、
+    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationController.navigationBar.backItem setHidesBackButton:YES];
+    self.navigationItem.title = @"";
+    self.navigationController.navigationBar.hidden = NO;
     
-    [self.navgationView hideLeftBtn];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+    //放最顶层
+    [self.view bringSubviewToFront:self.navgationView];
+}
+- (void)setNavgationInViewWillLayoutSubviews{
+    
+    //新subview添加时，调整nav放最顶层
+    [self.view bringSubviewToFront:self.navgationView];
+}
+#pragma mark - Nav
+- (void)hideNavLeftItem{
+    [self.navgationView hideLeftItem];
 }
 - (void)hideNav{
-    
     [self.navgationView hideNav];
 }
 - (void)showNav{
-    
     [self.navgationView showNav];
 }
-#pragma mark - LCNavgationViewDelegate
-//nav返回
-- (void)nav_backActionWithController:(UIViewController *)controller{
-    
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)hideNavRightItem{
+    [self.navgationView hideRightItem];
 }
-
-#pragma mark - UI
-- (void)setNavTitle:(NSString *)title{
-    self.navgationView.title = title;
+- (void)showNavRightItem{
+    [self.navgationView showRightItem];
 }
 - (void)setNavBgColors:(NSArray *)navBgColors{
     self.navgationView.navBgColors = navBgColors;
@@ -76,17 +89,17 @@ static NSString *navgationViewKey = @"navgationViewKey";
 - (void)setNavTitleLabmaxWidth:(CGFloat)navTitleLabmaxWidth{
     self.navgationView.navTitleLabmaxWidth = navTitleLabmaxWidth;
 }
-- (void)setNavBackLeft:(CGFloat)navBackLeft{
-    self.navgationView.navBackLeft = navBackLeft;
+- (void)setNavLeftItemLeft:(CGFloat)navBackLeft{
+    self.navgationView.navLeftItemLeft = navBackLeft;
 }
-- (void)setNavRightBtnRight:(CGFloat)rightBtnRight{
-    self.navgationView.rightBtnRight = rightBtnRight;
+- (void)setNavRightItemRight:(CGFloat)rightItemRight{
+    self.navgationView.rightItemRight = rightItemRight;
 }
-- (void)setNavRightBtnFont:(UIFont *)rightBtnFont{
-    self.navgationView.rightBtnFont = rightBtnFont;
+- (void)setNavRightItemFont:(UIFont *)rightItemFont{
+    self.navgationView.rightItemFont = rightItemFont;
 }
-- (void)setNavRightBtnBgColor:(UIColor *)rightBtnBgColor{
-    self.navgationView.rightBtnBgColor = rightBtnBgColor;
+- (void)setNavRightItemBgColor:(UIColor *)rightItemBgColor{
+    self.navgationView.rightItemBgColor = rightItemBgColor;
 }
 //设置左按钮图片
 - (void)setNavLeftItemImg:(UIImage *)image state:(UIControlState)state{
@@ -105,5 +118,32 @@ static NSString *navgationViewKey = @"navgationViewKey";
 - (void)setNavRightItemTtitleColor:(UIColor *)color state:(UIControlState)state{
     
     [self.navgationView setNavRightItemTtitleColor:color state:state];
+}
+//添加视图
+- (void)addNavAdditionalView:(UIView *)additionalView{
+    
+    [self.navgationView addAdditionalView:additionalView];
+}
+#pragma mark - LCNavgationViewDelegate
+//nav返回
+- (void)nav_leftActionWithLeftItem:(UIButton *)leftItem{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark - set/get
+-(void)setNavTitle:(NSString *)navTitle{
+    
+    objc_setAssociatedObject(self, &navTitleKey, navTitle, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    self.navgationView.title = navTitle;
+}
+-(NSString *)navTitle{
+    return objc_getAssociatedObject(self, &navTitleKey);
+}
+-(void)setNavgationView:(LCNavgationView *)navgationView{
+    objc_setAssociatedObject(self, &navgationViewKey, navgationView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(LCNavgationView *)navgationView{
+    return objc_getAssociatedObject(self, &navgationViewKey);
 }
 @end

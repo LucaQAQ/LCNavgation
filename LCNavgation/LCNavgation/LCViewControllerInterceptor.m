@@ -48,13 +48,9 @@
 #pragma mark - Hook Methods
 - (void)ots_viewDidLoad:(UIViewController<LCNavgationViewDelegate> *)controller{
     BOOL hasNav = [controller conformsToProtocol:@protocol(LCNavgationViewDelegate)];
-    if (hasNav && !controller.navgationView) {
+    if (hasNav) {
         //导航栏切片
-        LCNavgationView *nav = [[LCNavgationView alloc]initWithController:controller];
-        nav.navBgColors = @[[UIColor redColor],[UIColor blueColor]];
-        nav.navTitleColor = [UIColor whiteColor];
-        nav.delegate = controller;
-        controller.navgationView = nav;
+        [controller initNavgationInViewDidLoad];
     }
 }
 - (void)ots_viewWillAppear:(BOOL)animated
@@ -62,7 +58,7 @@
     BOOL hasNav = [controller conformsToProtocol:@protocol(LCNavgationViewDelegate)];
     
     if (hasNav) {
-        [controller.navgationView setNavWhenViewWillAppear];
+        [controller setNavgationInViewWillAppear];
     }
 }
 
